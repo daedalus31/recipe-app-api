@@ -15,7 +15,8 @@ class ModelTests(TestCase):
 
     def test_new_user_email_normalized(self):
         email = 'test@FooBar.COM'
-        user = get_user_model().objects.create_user(email=email, password='test123')
+        user = get_user_model().objects.create_user(email=email,
+                                                    password='test123')
         self.assertEqual(user.email, email.lower())
 
     def test_new_user_invalid_email(self):
